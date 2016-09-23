@@ -1,0 +1,8 @@
+language: java
+
+addons:
+  sonarqube: true
+
+script:
+  gradle check
+  gradle sonarqube -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN -Dsonar.verbose=true
